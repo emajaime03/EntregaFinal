@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+body {
+    background-color: rgb(24 26 72);
+    margin-block: 10px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.iconoCarrito {
+    color: white;
+}
+
+main {
+    background-color: rgb(255, 255, 255);
+    margin-inline: 20px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.productos {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.carrito-vacio {
+    font-size: 20px;
+}
+
+.carrito button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    color: red;
+    font-size: 18px;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    font-size: 25px;
+}
+
+nav .menu {
+    padding: 10px;
+}
+
+.activo {
+    background-color: white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: -10px;
+    position: relative;
+    color: black;
+}
+
+header {
+    position: relative;
+}
+
+.activo i {
+    color: black;
+}
+
+.activo::after {
+    content: '';
+    position: absolute;
+    background-color: transparent;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    width: 20px;
+    height: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: -10px 0px 0px rgb(255, 255, 255);
+}
+
+.activo::before {
+    content: '';
+    position: absolute;
+    background-color: transparent;
+    bottom: 0;
+    right: 100%;
+    width: 20px;
+    height: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 10px 0px 0px rgb(255, 255, 255);
+}
+
+.seccion-carrito {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-direction: row;
+}
+
+.seccion-carrito-pago {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.seccion-pago {
+    padding-block: 30px;
+    border-radius: 10px;
+    height: fit-content;
+    align-self: center;
+}
+
+.lista-tarjetas {
+    gap: 10px;
+}
+
+.tarjetas {
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #F2F2F2;
+    text-align: center;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.tarjetas:active {
+    box-shadow: 0px 0px 10px rgba(45, 45, 45, 0.5);
+}
+
+.tarjetas h3 {
+    color: rgb(51, 0, 255);
+}
+
+.carrito {
+    display: flex;
+    gap: 50px;
+    padding: 20px;
+    width: 100%;
+    justify-content: space-between;
+    background-color: rgb(213, 209, 209);
+    box-shadow: 0px 0px 10px rgba(45, 45, 45, 0.2);
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.carrito h3 {
+    text-align: left;
+    width: 70px
+}
+
+@media (width <=1246px) {
+    .seccion-carrito {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .seccion-carrito-pago {
+        width: 100%;
+    }
+
+    .productos-carrito {
+        width: 100%;
+    }
+}
+
+@media (width <=600px) {
+    .carrito {
+        flex-direction: column;
+    }
+
+    .carrito h3 {
+        text-align: center;
+    }
+}
+
+/* -----------------TARJETAS----------------------- */
+
+.card {
+    position: relative;
+    width: 11.875em;
+    height: 16.5em;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 120ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    padding-bottom: 3.4em;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card::after {
+    content: "Add to Cart";
+    padding-top: 1.25em;
+    padding-left: 1.25em;
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    background: #00AC7C;
+    color: #fff;
+    height: 2.5em;
+    width: 90%;
+    transition: all 80ms;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0;
+}
+
+.card .title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    left: 0.625em;
+    bottom: 1.875em;
+    font-weight: 400;
+    color: #000;
+}
+
+.card .price {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    left: 0.625em;
+    bottom: 0.625em;
+    color: #000;
+}
+
+.card:hover::after {
+    bottom: 0;
+    opacity: 1;
+}
+
+.card:active {
+    transform: scale(0.98);
+}
+
+.card:active::after {
+    content: "Added !";
+    height: 3.125em;
+}
+
+.text {
+    max-width: 55px;
+}
+
+.image {
+    background: rgb(241, 241, 241);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+/* ---------------------FORMULARIO------------------------- */
+
+.modal {
+    width: fit-content;
+    height: fit-content;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 26px;
+    max-width: 450px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.separator {
+    width: calc(100% - 20px);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+    color: #8B8E98;
+    margin: 0 10px;
+}
+
+.separator>p {
+    display: block;
+    text-align: center;
+    color: rgb(71, 71, 71);
+    font-size: 15px;
+    margin: auto;
+}
+
+.separator .line {
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    border: 0;
+    background-color: #e8e8e8;
+    margin: auto;
+}
+
+.credit-card-info--form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input_container {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input_label {
+    font-size: 15px;
+    color: #8B8E98;
+}
+
+.input_field {
+    width: auto;
+    height: 40px;
+    padding: 0 0 0 16px;
+    border-radius: 9px;
+    background-color: #F2F2F2;
+    border: 1px solid #e5e5e500;
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.input_field:focus {
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 0px 2px #242424;
+    background-color: transparent;
+}
+
+.purchase--btn {
+    height: 55px;
+    background: #F2F2F2;
+    border-radius: 11px;
+    border: 0;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    background: linear-gradient(180deg, #363636 0%, #1B1B1B 50%, #000000 100%);
+    box-shadow: 0px 0px 0px 0px #FFFFFF, 0px 0px 0px 0px #000000;
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.purchase--btn:hover {
+    box-shadow: 0px 0px 0px 2px #FFFFFF, 0px 0px 0px 4px #0000003a;
+}

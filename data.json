@@ -1,0 +1,57 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "MESA",
+            "precio": 2000,
+            "imagen": "./img/mesa.webp"
+        },
+        {
+            "id": 2,
+            "nombre": "SILLA",
+            "precio": 500,
+            "imagen": "./img/silla.jpeg"
+        },
+        {
+            "id": 3,
+            "nombre": "ESCRITORIO",
+            "precio": 5500,
+            "imagen": "./img/escritorio.jpeg"
+        },
+        {
+            "id": 4,
+            "nombre": "PLACARD",
+            "precio": 7000,
+            "imagen": "./img/placard.jpg"
+        },
+        {
+            "id": 5,
+            "nombre": "CAMA",
+            "precio": 8000,
+            "imagen": "./img/cama.jpg"
+        },
+        {
+            "id": 6,
+            "nombre": "BIBLIOTECA",
+            "precio": 9500,
+            "imagen": "./img/biblioteca.webp"
+        }
+    ],
+    "tarjetas": [
+        {
+            "id": 1,
+            "proveedor": "VISA",
+            "descuento": 0.35
+        },
+        {
+            "id": 2,
+            "proveedor": "MASTERCARD",
+            "descuento": 0.2
+        },
+        {
+            "id": 3,
+            "proveedor": "AMEX",
+            "descuento": 0.15
+        }
+    ]
+}
